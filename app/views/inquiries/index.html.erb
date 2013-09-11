@@ -3,14 +3,14 @@
   サインイン ： 
   <%= Ctantom.where(:ctuid => current_user.userno).first.ctname %>
 
-<h1>ＣＳコンシェルジュ</h1>
+<h1>受付一覧</h1>
 
 <h2>id検索</h2>
 <%= form_tag "search", method: :get do %>
 <p><%= text_field_tag "id", params[:id] %>
 
-<h2>担当者検索</h2>
-<p><%= text_field_tag "ttanto", params[:ttanto] %>
+<!--h2>担当者検索</h2>
+<p>< text_field_tag "ttanto", params[:ttanto] %-->
 
 <%= submit_tag "検索" %></p>
 <% end %>

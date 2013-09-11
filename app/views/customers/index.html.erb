@@ -3,10 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>�ڋq��</th>
-      <th>�ڋq��</th>
-      <th>�J�i</th>
-      <th>�Z��</th>
+      <th>顧客名</th>
+      <th>顧客№</th>
+      <th>カナ</th>
+      <th>住所</th>
       <th>Tel</th>
       <th>Fax</th>
       <th></th>
@@ -24,8 +24,8 @@
         <td><%= customer.address %></td>
         <td><%= customer.tel %></td>
         <td><%= customer.fax %></td>
-        <td><%= link_to '�ڍ�', customer %></td>
-        <td><%= link_to '�ҏW', edit_customer_path(customer) %></td>
+        <td><%= link_to '詳細', customer %></td>
+        <td><%= link_to '編集', edit_customer_path(customer) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to '�V�K�쐬', new_customer_path %>
+<%= link_to '新規作成', new_customer_path %>

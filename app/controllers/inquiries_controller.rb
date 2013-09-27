@@ -6,6 +6,7 @@ class InquiriesController < ApplicationController
   # GET /inquiries.json
   def index
     @inquiries = Inquiry.all
+    @ctantoms = Ctantom.all
   end
 
   # GET /inquiries/1
@@ -71,16 +72,19 @@ class InquiriesController < ApplicationController
   end
 
   def search
+    @ctantoms = Ctantom.all
     result = Inquiry.all()
+    
     if !params[:id].blank?
       result = result.where('id = ?', params[:id])
     end
     
-    if !params[ctantom.ctname].blank?
-      result = result.where('ttanto = ?', params[ctantom.ctname])
+    if !params[:ctantom_id].blank?
+      result = result.where('ctantom_id = ?', params[:ctantom_id])
     end
     
     @inquiries = result
+    
     render "index"
    end
   

@@ -1,1 +1,1 @@
-json.extract! @inquiry, :receptiondate, :contact, :client, :memo, :created_at, :updated_at, :deadline, :title, :utanto, :ttanto, :ctanto, :jyokyo, :youken, :recontact, :kinkyu, :taiou, :gotaiou, :tmemo
+json.extract! @inquiry, :receptiondate, :contact, :client, :memo, :created_at, :updated_at, :deadline, :title, :utanto, :ttanto, :ctanto, :jyokyo, :youken, :recontact, :kinkyu, :taiou, :gotaiou, :tmemo, :ctantom_id, :contact_id

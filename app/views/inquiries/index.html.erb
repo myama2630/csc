@@ -1,21 +1,32 @@
- <br>
- <br>
-  サインイン ： 
+
+サインイン： 
   <%= Ctantom.where(:ctuid => current_user.userno).first.ctname %>
-
-<h1>受付一覧</h1>
-
-<h2>id検索</h2>
-<%= form_tag "search", method: :get do %>
-<p><%= text_field_tag "id", params[:id] %>
-
-<!--h2>担当者検索</h2>
-<p>< text_field_tag "ttanto", params[:ttanto] %-->
-
-<%= submit_tag "検索" %></p>
-<% end %>
+ <br>
+受付一覧
+ <br>
+<table>
+  <thead>
+    <tr>
+      <th>　レコードID　</th>
+      <th>　対応担当者　</th>
+      <th>　受付担当者　</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <%= form_tag "search", method: :get do %>
+      <tr>
+        <td><%= text_field_tag "id", params[:id] %></td>
+        <td><%= collection_select( params[:ctantom_id], :ctantom_id, @ctantoms, :id, :ctname, :include_blank => true ) %></td>
+        <td><%= collection_select( params[:ctantom_id], :ctantom_id, @ctantoms, :id, :ctname, :include_blank => true ) %></td>
+        <td><%= submit_tag "検索" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
+
 <table>
   <thead>
     <tr>
@@ -47,7 +58,7 @@
          
         <td><%= link_to '詳細', inquiry %></td>
         <td><%= link_to '編集', edit_inquiry_path(inquiry) %></td>
-        <!--td><%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: '削除しますか?' } %></td-->
+        <td><%= link_to '削除', inquiry, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

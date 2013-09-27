@@ -46,3 +46,5 @@ end
 gem 'devise'
 gem 'rails4_acts_as_paranoid'
 gem 'web-app-theme'
+gem 'railroad'
+gem 'workflow'
